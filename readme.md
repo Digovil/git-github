@@ -69,7 +69,7 @@ Para enviar a un repositorio remoto el repositorio local:
 
     git push
 
-## Sacar archivo de Git Add
+## Sacar archivo de Git Add ⛏
 
 
 Cached significa que esta todavía en memoria RAM, que no están guardados sus cambios en la base de datos local de git:
@@ -87,3 +87,10 @@ De esta forma podemos ver que cosa cambio:
 
     git diff commit1 commit2
 
+## Staging 🧐
+
+Cuando se inicializa git en un proyecto, se crea un área en memoria ram llamada staging y se crea el repositorio /.git/, cuando tu escribes add este archivo pasa a vivir a staging la cual es un lugar totalmente aislado, que esta esperando a que lo mandes al repositorio local /.git/ o a que lo quites con un rm --cached, cuando tu le das un commit, este archivo se manda para el repositorio local, el cual tiene un nombre por default el cual es master.
+
+El staging es la memoria ram, es el estado temporal donde tu agregas archivos que vas cambiando.
+
+Antes del git add, el archivo esta untrackted (sin rastreo) despues del git add, el archivo está en un estado tracked (rastreado), ahí hace parte de staging, es decir que el archivo está tackeado 
