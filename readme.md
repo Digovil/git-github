@@ -99,4 +99,10 @@ Antes del git add, el archivo esta untrackted (sin rastreo) despues del git add,
 
 Para ello utilizaremos el comando:
 
-    git checkout
+    git pull
+
+## Creando la rama para experimentar 🤗🤩
+
+## HotFix 🔥🥵
+
+Arreglo en caliente de la rama actual, donde si se presentan bugs en la rama actual, podemos crear esta nueva rama para poder trabajar comodamente con ella y arreglar los errores. ✨
