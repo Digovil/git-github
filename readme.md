@@ -55,11 +55,11 @@ Eso hará que se carguen todos los archivos que contiene el proyecto. Una vez te
 
         git status
 
-- Cambios historicos hechos, mostrandote las lineas de código anterior, posterior y quién lo cambió:
+- Cambios historicos hechos, mostrandote las lineas de código anterior, posterior y quién lo cambió, esto te lo muestra con un diff que lo que hace es comparar:
 
         git show
 
-- Si quiero ver el historial completo de un archivo:
+- Si quiero ver el historial completo de un archivo, con el nombre de la modificación:
 
         git log nombreArchivo.extensionArchivo
 
