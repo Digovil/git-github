@@ -101,8 +101,32 @@ Para ello utilizaremos el comando:
 
     git pull
 
-## Creando la rama para experimentar 🤗🤩
+## Creando la rama para experimentar 🤗🤩 Rama development
 
 ## HotFix 🔥🥵
 
 Arreglo en caliente de la rama actual, donde si se presentan bugs en la rama actual, podemos crear esta nueva rama para poder trabajar comodamente con ella y arreglar los errores. ✨
+
+## Merge 🤜🏿🤛🏿
+
+Esto es cuando unes una rama con otra
+
+## Volver en el tiempo ✈😵
+
+Para volver a una versión anterior todo el proyecto:
+
+- reset --hard, este es el más peligroso puede cambiar absolumente todo al commit anterior:
+
+        git reset nombreCommit --hard
+
+- reset --soft, este cambia al commit anterior pero lo que tengamos en staging sigue en staging:
+
+        git reset nombreCommit --soft
+
+Para volver a una versión anterior un archivo del proyecto:
+
+    git checkout nombreCommit nombreArchivo.extensionArchivo
+
+Para volver a la versión actual:
+
+    git checkout nombreRama nombreArchivo.extensionArchivo
