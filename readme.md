@@ -75,3 +75,15 @@ Para enviar a un repositorio remoto el repositorio local:
 Cached significa que esta todavía en memoria RAM, que no están guardados sus cambios en la base de datos local de git:
 
     git rm --cached nombreArchivo.extensionArchivo
+
+
+## Comparando commits 😮
+
+Primero tenemos que ver los commits existente del archivo a comparar
+
+    git log .
+
+De esta forma podemos ver que cosa cambio:
+
+    git diff commit1 commit2
+
