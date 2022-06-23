@@ -201,3 +201,14 @@ De esta manera siempre tengo una copia actualizada de lo ultimo que paso en el r
 
 ## Ramas 🌿🐒
 
+Para crear una rama:
+
+    git branch nombreRama
+
+Para ver a donde esta apuntando el HEAD 
+
+    git show
+
+Para pasarme a la rama creada
+
+    git checkout nombreRama
