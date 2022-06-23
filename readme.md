@@ -212,3 +212,5 @@ Para ver a donde esta apuntando el HEAD
 Para pasarme a la rama creada
 
     git checkout nombreRama
+
+Cuando hago un merge, y quiero conservar muchas cosas de lo que ya se tiene, se tiene que hacer desde la rama principal donde no haya conflictos
