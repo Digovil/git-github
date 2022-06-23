@@ -63,6 +63,10 @@ Eso hará que se carguen todos los archivos que contiene el proyecto. Una vez te
 
         git log nombreArchivo.extensionArchivo
 
+- El commit y el add a la vez, (nota: No funciona para archivos nuevos que no le hayas dado add) :
+
+        git commit -am nombreArchivo.extensionArchivo
+
 ## Manejo en repositorio remoto
 
 Para enviar a un repositorio remoto el repositorio local:
@@ -178,3 +182,22 @@ información de los commits y del área de staging se borra del historial.
 para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no
 se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de
 nuevo en staging con git add, por supuesto.
+
+## Servidor Remoto 💻
+
+Primero tenemos que clonar dicho repositorio:
+
+    git clone url
+
+Cuando quiero enviar el commit:
+
+    git push
+
+Quiero traer una actualización, entonces utilizamos el git fetch, que lo que hace es traer todos esos cambios al repositorio local, pero no te lo copia en los archivos, para que se copie en sus archivos, se fusiona la ultima versión que está en repositorio local con la versión actual y eso es un merge, pero hay un comando que fusiona ambos conceptos:
+
+    git pull
+
+De esta manera siempre tengo una copia actualizada de lo ultimo que paso en el repositorio
+
+## Ramas 🌿🐒
+
