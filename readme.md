@@ -225,7 +225,7 @@ Esto consiste en tener una llave pública y una privada, la privada si te la tie
 
 Se cifra el mensaje con la llave pública generada, en consecuencia se genera un nuevo mensaje y dicho mensaje solo puede ser descifrado por la llave privada.
 
-![img](./img/cifrado-asimetrico-un-camino.png)
+![img](https://i.imgur.com/MG82ubW.png)
 
 
 ## Seguridad 🛡 
@@ -299,7 +299,7 @@ Eso nos mostrará algo así:
 
 - El resultado:
 
-    ![img](./img/tree-project-history.PNG)
+    ![img](https://i.imgur.com/MiCdMLK.png)
 
 - Ahora para crear una versión desde el id del commit  __5eb119e en la prueba 12__:
 
@@ -354,3 +354,35 @@ No se recomienda que nuestros archivos completamente binarios se carguen de buen
 El flujo de trabajo existen dos ramas, la primera __main__ y la __staging-develop__.
 
 El __pull request__ es un estado medio antes de enviar el proyecto, del __feature__ al __stangin-develop__, donde los miembros del equipo aprueban para probarlo en stagin, luego de eso se fusional los cambios con la rama main, despues se hace el __pull request__ que es una caracteristica de github.
+
+
+![img](https://i.imgur.com/y36p5P0.png)
+
+## Fork Github
+
+Para hacer contribuciones al repositorio de alguien, necesitas que dicho repositorio este público.
+
+1. Necesitas darle en __Watch__ para mirar las conversaciones del proyecto.
+
+2. Le das en la estrellita.
+
+3. Le das en el Fork.
+
+Una vez dado el fork se te creará el repositorio pero en cuenta de github, si quieres hacer una contribución tienes que darle en __new pull request__, también puedes comparar los diferentes forks, seleccionas las ramás que deseas fucionar, posteriormente podreos __crear el pull request__.
+
+
+En la otra parte aparecera el __rewie changes__, ahi le aparece 3 opciones de aprobar, comentar y solicitar cambios y por ultimo se confirma el merge.
+
+Para mantener actualizado el fork, github te notifica cuantos commits esta detras de tu proyecto, para actualizarlo desde la web, necesitas darle en __compare__, luego __switching the base__ y posteriormente se le da el pull request en el fork.
+
+## Fork Git
+
+Para trabajar con el repositorio y mantenerlo actualizado, necesitamos agregar su url en una rama, y hacerle el pull a dicha rama.
+
+        git remote add nombre url
+
+Luego se tiene que hacer:
+
+        git pull nombre main
+
+
