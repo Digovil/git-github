@@ -281,4 +281,76 @@ Eso nos mostrará algo así:
 
 - Ahora vamos ese protocolo https a ssh 😁
 
-        git remote set-url origin
+        git remote set-url origin git@github.com:Digovil/git-github.git
+
+## Tags y versiones
+
+- Esto te muestra todos los log y de manera grafica te muestra los merge que han tenido tus ramas:
+
+        git log --all --graph
+
+- Esto te muestra la historia del proyecto, como arranco y te muestra el id de lo que ocurrio:
+
+        git log --all --graph --decorate --oneline
+
+- Ese comando largisimo le puedes poner un alias:
+
+        alias tree="git log --all --graph --decorate --oneline"
+
+- El resultado:
+
+    ![img](./img/tree-project-history.PNG)
+
+- Ahora para crear una versión desde el id del commit  __5eb119e en la prueba 12__:
+
+        git tag -a v1.0 -m "starting with test 12" 5eb119e
+
+- Para ver cuantos tags tenemos en git:
+
+        git tag
+
+- Para ver los tags y los commit de los tags:
+
+        git show-ref --tags
+
+- Ahora debemos enviarlo a github:
+
+        git push origin --tags
+
+- Borrar tags: 
+
+        git tag -d nombreTag
+
+- Borrar tags en github:
+
+        git push origin: refs/tags/nombreTag
+
+## Ramas
+
+- Ramas que existen y su historia:
+
+        git show-branch
+
+        git show-branch --all
+
+- Abrir toda la historia de manera visual:
+
+        gitk
+
+- Traerse una rama del repositorio:
+
+        git pull origin nombreRama
+
+Este proceso de ramificación se tiene que hacer desde la versión más reciente.
+
+- para enviar una rama a github:
+
+        git push origin nombreRama
+
+No se recomienda que nuestros archivos completamente binarios se carguen de buenas a primeras, porque trae un inconveniente, de que se le suma peso a los repositorios.
+
+## Flujo de trabajo
+
+El flujo de trabajo existen dos ramas, la primera __main__ y la __staging-develop__.
+
+El __pull request__ es un estado medio antes de enviar el proyecto, del __feature__ al __stangin-develop__, donde los miembros del equipo aprueban para probarlo en stagin, luego de eso se fusional los cambios con la rama main, despues se hace el __pull request__ que es una caracteristica de github.
