@@ -212,3 +212,73 @@ Para ver a donde esta apuntando el HEAD
 Para pasarme a la rama creada
 
     git checkout nombreRama
+
+# GitHub 🎁♥
+
+## Llaves públicas y privadas
+
+Para que los mensajes se muevan libremente por el internet sin que nadie sepa que dice, necesitamos cifrarlo.
+
+Esto consiste en tengo un mansaje, lo cifro y cuando llega al destino utiliza una contraseña para descifrarlo, pero esto lo hace inseguro porque también lo pueden interceptar. Por tal razón se crearon las llaves públicas y privadas o __cifrado asimetrico de un solo camino__.
+
+Esto consiste en tener una llave pública y una privada, la privada si te la tienes que guardar. La llave pública sigue conectada matemáticamente con la llave privada.
+
+Se cifra el mensaje con la llave pública generada, en consecuencia se genera un nuevo mensaje y dicho mensaje solo puede ser descifrado por la llave privada.
+
+![img](./img/cifrado-asimetrico-un-camino.png)
+
+
+## Seguridad 🛡 
+
+### (Solo para Windows y Linux) 
+
+En cuanto a la seguridad, el nombre de usuario y contraseña se están guardando de manera local en el ordenador. Eso nos hace vulnerable al Password Cracking, es un problema ya que si entran al código fuente, pueden entrar a los proyectos.
+
+En el pc creo mi llave pública y privada, la pública se la envio a github y lo conectamos por un nuevo protocolo, lo conectamos por el protocolo __ssh__.
+
+Github me dará su llave pública, en cuanto a mi llave privada, se le puede agregar una llave adicional para hacerla más fuerte. 😍😎
+
+- Para crear la llave __ssh__ se pone el comando __ssh-keygen__ (como su nombre lo indica, va a generar una clave ssh) __-t__ (esto especifica cual es el algoritmo que usaremos para crear esa llave) __rsa__ (vamos a utilizar el algoritmo rsa que el por el momento es el más popular) __-b__ (se especifica que tan compleja es la llave) __4096__ (Es la complejidad de la llave desde una perspectiva matemática) __-C__ (se indica a que correo electronico va a estar conectada esta llave):
+
+        ssh-keygen -t rsa -b 4096 -C "tucoreo@sudominio.com"
+
+- Luego te pide un __passphrase__ lo que significa contraseña con espacios 💅🏿 está es la contraseña adicional de texto que se le va a poner a nuestra llave pública y privada.
+
+- El key fingerprint es la huella, es una forma de confirmar que la llave es de verdad
+
+- El key's randomart image, es el cuadrito que te aparece, es una forma de compartir la llave.
+
+- Necesitamos revisar que el servidor de __ssh__ este encendido, es un pequeño programa que esta revisando que las llaves estan corriendo para conectarlo a un servidor remoto:
+
+        eval $(ssh-agent -s)
+
+- El comando anterior lo tienes que ejecutar en bash y sabes si esta corriendo o no si te da esto como resultado __Agent pid Algunnumero__
+
+- El simbolo __~__ es una forma de decir __/c/Users/NombreUsuario__
+
+- Ahora vamos a agregar la llave que acabamos de crear:
+
+        ssh-add ~/.ssh/id_rsa
+
+- En Github:
+
+    - Settings > SSH keys and GPG keys > New SSH key 
+    
+Justo en ese apartado le insertas el contenido  de tu llave pública que porcierto es la que tiene la extensión .pub
+
+- Luego vamos a nuestro repositorio, le copiamos el ssh:
+
+        git@github.com:NombreUsuario/NombreRepositorio.git
+
+- Vamos a ver los links a donde esta conectado el repositorio:
+
+        git remote -v
+
+Eso nos mostrará algo así:
+
+    origin  https://github.com/Digovil/git-github.git (fetch)
+    origin  https://github.com/Digovil/git-github.git (push) 
+
+- Ahora vamos ese protocolo https a ssh 😁
+
+        git remote set-url origin
