@@ -8,11 +8,11 @@ Con el un guión usamos las letras y con el doble guión usamos una palabra en e
 
 - Primero pondremos el nombre de usuario:
 
-    git config --global user.name "Digovil"
+        git config --global user.name "Digovil"
         
 - Luego en el siguiente comando pondremos nuestro email:
 
-    git config --global user.email "dilangvidal@gmail.com"
+        git config --global user.email "dilangvidal@gmail.com"
 
 Para poder ver la configuración por defecto de git:
 
@@ -53,19 +53,19 @@ Eso hará que se carguen todos los archivos que contiene el proyecto. Una vez te
 
 - Estado de la base de datos:
 
-    git status
+        git status
 
 - Cambios historicos hechos, mostrandote las lineas de código anterior, posterior y quién lo cambió, esto te lo muestra con un diff que lo que hace es comparar:
 
-    git show
+        git show
 
 - Si quiero ver el historial completo de un archivo, con el nombre de la modificación:
 
-    git log nombreArchivo.extensionArchivo
+        git log nombreArchivo.extensionArchivo
 
 - El commit y el add a la vez, (nota: No funciona para archivos nuevos que no le hayas dado add) :
 
-    git commit -am nombreArchivo.extensionArchivo
+        git commit -am nombreArchivo.extensionArchivo
 
 ## Manejo en repositorio remoto
 
@@ -121,11 +121,11 @@ Para volver a una versión anterior todo el proyecto:
 
 - reset --hard, este es el más peligroso puede cambiar absolumente todo al commit anterior:
 
-    git reset nombreCommit --hard
+        git reset nombreCommit --hard
 
 - reset --soft, este cambia al commit anterior pero lo que tengamos en staging sigue en staging:
 
-    git reset nombreCommit --soft
+        git reset nombreCommit --soft
 
 Para volver a una versión anterior un archivo del proyecto:
 
@@ -268,11 +268,11 @@ Justo en ese apartado le insertas el contenido  de tu llave pública que porcier
 
 - Luego vamos a nuestro repositorio, le copiamos el ssh:
 
-    git@github.com:NombreUsuario/NombreRepositorio.git
+        git@github.com:NombreUsuario/NombreRepositorio.git
 
 - Vamos a ver los links a donde esta conectado el repositorio:
 
-    git remote -v
+        git remote -v
 
 Eso nos mostrará algo así:
 
@@ -281,17 +281,17 @@ Eso nos mostrará algo así:
 
 - Ahora vamos ese protocolo https a ssh 😁
 
-    git remote set-url origin git@github.com:Digovil/git-github.git
+        git remote set-url origin git@github.com:Digovil/git-github.git
 
 ## Tags y versiones
 
 - Esto te muestra todos los log y de manera grafica te muestra los merge que han tenido tus ramas:
 
-    git log --all --graph
+        git log --all --graph
 
 - Esto te muestra la historia del proyecto, como arranco y te muestra el id de lo que ocurrio:
 
-    git log --all --graph --decorate --oneline
+        git log --all --graph --decorate --oneline
 
 - Ese comando largisimo le puedes poner un alias:
 
@@ -303,49 +303,49 @@ Eso nos mostrará algo así:
 
 - Ahora para crear una versión desde el id del commit  __5eb119e en la prueba 12__:
 
-    git tag -a v1.0 -m "starting with test 12" 5eb119e
+        git tag -a v1.0 -m "starting with test 12" 5eb119e
 
 - Para ver cuantos tags tenemos en git:
 
-    git tag
+        git tag
 
 - Para ver los tags y los commit de los tags:
 
-    git show-ref --tags
+        git show-ref --tags
 
 - Ahora debemos enviarlo a github:
 
-    git push origin --tags
+        git push origin --tags
 
 - Borrar tags: 
 
-    git tag -d nombreTag
+        git tag -d nombreTag
 
 - Borrar tags en github:
 
-    git push origin: refs/tags/nombreTag
+        git push origin: refs/tags/nombreTag
 
 ## Ramas
 
 - Ramas que existen y su historia:
 
-    git show-branch
+        git show-branch
 
-    git show-branch --all
+        git show-branch --all
 
 - Abrir toda la historia de manera visual:
 
-    gitk
+        gitk
 
 - Traerse una rama del repositorio:
 
-    git pull origin nombreRama
+        git pull origin nombreRama
 
 Este proceso de ramificación se tiene que hacer desde la versión más reciente.
 
 - para enviar una rama a github:
 
-    git push origin nombreRama
+        git push origin nombreRama
 
 No se recomienda que nuestros archivos completamente binarios se carguen de buenas a primeras, porque trae un inconveniente, de que se le suma peso a los repositorios.
 
@@ -379,10 +379,10 @@ Para mantener actualizado el fork, github te notifica cuantos commits esta detra
 
 Para trabajar con el repositorio y mantenerlo actualizado, necesitamos agregar su url en una rama, y hacerle el pull a dicha rama.
 
-    git remote add nombre url
+        git remote add nombre url
 
 Luego se tiene que hacer:
 
-    git pull nombre main
+        git pull nombre main
 
 
